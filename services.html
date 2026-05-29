@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Services — MOVVE</title>
+<style>
+:root{--color-primary:#0A1628;--color-secondary:#5B6E8C;--color-tertiary:#991B1E;--color-neutral:#F7F8FA;--color-on-primary:#FFFFFF;--color-on-tertiary:#FFFFFF;--color-surface:#FFFFFF;--color-border:#E2E6ED;--color-muted:#8E99A9;--font:'Inter',sans-serif;--rounded-sm:6px;--rounded-md:10px;--rounded-lg:16px;--rounded-full:9999px;--space-xs:6px;--space-sm:12px;--space-md:20px;--space-lg:32px;--space-xl:56px;--space-2xl:80px;--shadow-sm:0 1px 2px rgba(10,22,40,.06);--shadow-md:0 4px 16px rgba(10,22,40,.08);--shadow-lg:0 12px 40px rgba(10,22,40,.1);--transition:250ms cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-size:1rem;line-height:1.6;color:var(--color-primary);background:var(--color-neutral);-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+.container{max-width:1200px;margin:0 auto;padding:0 var(--space-lg)}
+.section{padding:var(--space-2xl) 0;position:relative}
+h1{font-size:clamp(2rem,4.5vw,3.5rem);font-weight:800;line-height:1.1;letter-spacing:-.03em}
+h2{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.2;letter-spacing:-.02em}
+h3{font-size:1.5rem;font-weight:600;line-height:1.3}
+.body-lg{font-size:1.125rem;line-height:1.65}
+.body-sm{font-size:.875rem;line-height:1.55;color:var(--color-secondary)}
+.label-caps{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--color-secondary)}
+.section-label{display:flex;align-items:center;gap:var(--space-sm);margin-bottom:var(--space-md)}
+.three-bar{display:flex;flex-direction:column;gap:3px;width:28px}
+.three-bar span{display:block;height:3px;border-radius:2px;background:var(--color-tertiary)}
+.three-bar span:nth-child(1){width:100%}.three-bar span:nth-child(2){width:66%}.three-bar span:nth-child(3){width:33%}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:.9375rem;font-weight:600;padding:14px 28px;border-radius:var(--rounded-sm);border:2px solid transparent;cursor:pointer;transition:all var(--transition);white-space:nowrap;position:relative;overflow:hidden}
+.btn::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--rx,50%) var(--ry,50%),rgba(255,255,255,.25) 0%,transparent 60%);opacity:0;transition:opacity .4s}
+.btn:active::after{opacity:1;transition:opacity 0s}
+.btn-primary{background:var(--color-tertiary);color:var(--color-on-tertiary);border-color:var(--color-tertiary)}
+.btn-primary:hover{background:#7A1518;border-color:#7A1518;transform:translateY(-2px);box-shadow:0 8px 24px rgba(153,27,30,.3)}
+.btn-secondary{background:transparent;color:var(--color-tertiary);border-color:var(--color-tertiary)}
+.btn-secondary:hover{background:var(--color-tertiary);color:var(--color-on-tertiary)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--color-border);box-shadow:var(--shadow-sm)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 var(--space-lg)}
+.nav-logo{display:flex;align-items:center;gap:var(--space-sm);font-size:1.75rem;font-weight:800;color:var(--color-primary);letter-spacing:-.02em}
+.logo-e{display:flex;flex-direction:column;gap:2px;margin-left:-2px}
+.logo-e span{width:14px;height:2.5px;border-radius:2px;background:var(--color-tertiary)}
+.nav-links{display:flex;align-items:center;gap:var(--space-lg);list-style:none}
+.nav-links a{font-size:.9375rem;font-weight:500;color:var(--color-secondary);transition:color var(--transition);padding:4px 0;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--color-tertiary);transition:width var(--transition)}
+.nav-links a:hover,.nav-links a.active{color:var(--color-tertiary)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.page-hero{background:var(--color-primary);padding:140px 0 var(--space-xl);text-align:center;position:relative;overflow:hidden}
+.page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(153,27,30,.08) 0%,transparent 70%);pointer-events:none}
+.page-hero h1{color:var(--color-on-primary);position:relative;z-index:1}
+.page-hero .body-lg{color:rgba(255,255,255,.65);max-width:600px;margin:var(--space-sm) auto 0;position:relative;z-index:1}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--rounded-md);padding:var(--space-lg);transition:all var(--transition)}
+.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.form-group{margin-bottom:var(--space-md)}
+.form-group label{display:block;font-size:.875rem;font-weight:600;margin-bottom:6px;color:var(--color-primary)}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:14px var(--space-md);border:1px solid var(--color-border);border-radius:var(--rounded-sm);font-family:var(--font);font-size:.9375rem;color:var(--color-primary);background:var(--color-surface);transition:border-color var(--transition);outline:none}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--color-tertiary)}
+.form-group textarea{resize:vertical;min-height:120px}
+.footer{background:var(--color-primary);border-top:1px solid rgba(255,255,255,.06);padding:var(--space-2xl) 0 var(--space-lg)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--space-xl);padding-bottom:var(--space-xl);border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:var(--space-lg)}
+.footer-brand .nav-logo{color:var(--color-on-primary);margin-bottom:var(--space-sm);font-size:1.5rem}
+.footer-brand .body-sm{color:rgba(255,255,255,.4);max-width:280px}
+.footer-col h4{color:var(--color-on-primary);font-size:.8125rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:var(--space-md)}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:var(--space-sm)}
+.footer-col a{font-size:.875rem;color:rgba(255,255,255,.4);transition:color var(--transition)}
+.footer-col a:hover{color:var(--color-on-primary)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between}
+.footer-bottom .body-sm{color:rgba(255,255,255,.3)}
+.tag{display:inline-block;padding:4px 12px;border-radius:var(--rounded-full);font-size:.75rem;font-weight:600;background:rgba(153,27,30,.08);color:var(--color-tertiary);margin-right:var(--space-xs)}
+@media(max-width:768px){.nav-links{display:none}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:var(--space-md)}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">MOVV<span class="logo-e"><span></span><span></span><span></span></span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="tracking.html">Track</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="tracking.html" class="btn btn-primary" style="padding:10px 22px;font-size:.875rem">Track Shipment</a>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container reveal">
+    <div class="section-label" style="justify-content:center"><div class="three-bar"><span></span><span></span><span></span></div><span class="label-caps" style="color:rgba(255,255,255,.5)">MOVVE</span></div>
+    <h1>Comprehensive logistics solutions</h1>
+    <p class="body-lg">Nine specialized services. One standard of precision. From first mile to last — we orchestrate every link in your supply chain.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--color-surface);padding-bottom:0">
+  <div class="container reveal" style="text-align:center">
+    <p class="body-lg" style="color:var(--color-secondary);max-width:650px;margin:0 auto">Nine services, one promise: <strong>The Power Of Precision</strong>. Every shipment tracked. Every deadline met. Every cost transparent.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--color-neutral)" id="air-freight">
+  <div class="container reveal">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-xl);align-items:start">
+      <div style="width:72px;height:72px;border-radius:var(--rounded-md);background:var(--color-tertiary);display:flex;align-items:center;justify-content:center;font-size:2rem">✈️</div>
+      <div>
+        <h2 style="margin-bottom:var(--space-sm)">Air Freight</h2>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">Time-critical cargo through our global air network</p>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">Door-to-airport and airport-to-door options. Real-time tracking at every waypoint. Express (1-2 days), standard (3-5 days), and consolidated services available on all major trade lanes. Temperature-controlled options for pharma and perishables.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-lg)"><span class="tag">Express & Standard</span><span class="tag">Charter Services</span><span class="tag">Temperature-Controlled</span><span class="tag">Dangerous Goods</span><span class="tag">Consolidation</span><span class="tag">Door-to-Door</span></div>
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:var(--color-surface)" id="ocean-freight">
+  <div class="container reveal">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-xl);align-items:start">
+      <div style="width:72px;height:72px;border-radius:var(--rounded-md);background:var(--color-tertiary);display:flex;align-items:center;justify-content:center;font-size:2rem">🚢</div>
+      <div>
+        <h2 style="margin-bottom:var(--space-sm)">Ocean Freight</h2>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">FCL and LCL shipping across all major trade lanes</p>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">Strategic carrier partnerships ensure capacity, competitive rates, and schedule reliability. Full-container-load (FCL) and less-than-container-load (LCL) options. Weekly sailings on all major east-west and north-south routes.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-lg)"><span class="tag">FCL Shipping</span><span class="tag">LCL Consolidation</span><span class="tag">Reefer Containers</span><span class="tag">Breakbulk</span><span class="tag">Ro-Ro Services</span><span class="tag">Port-to-Door</span></div>
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:var(--color-neutral)" id="ground-transport">
+  <div class="container reveal">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-xl);align-items:start">
+      <div style="width:72px;height:72px;border-radius:var(--rounded-md);background:var(--color-tertiary);display:flex;align-items:center;justify-content:center;font-size:2rem">🚛</div>
+      <div>
+        <h2 style="margin-bottom:var(--space-sm)">Ground Transport</h2>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">FTL, LTL, and intermodal solutions worldwide</p>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">Full truckload, less-than-truckload, and intermodal solutions across North America, Europe, and Asia-Pacific. GPS-tracked fleet with 98.6% on-time performance. Cross-border expertise with in-house customs clearance.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-lg)"><span class="tag">Full Truckload (FTL)</span><span class="tag">LTL Freight</span><span class="tag">Intermodal Rail</span><span class="tag">Cross-Border</span><span class="tag">Hazmat Transport</span><span class="tag">Dedicated Fleet</span></div>
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:var(--color-surface)" id="warehousing--distribution">
+  <div class="container reveal">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-xl);align-items:start">
+      <div style="width:72px;height:72px;border-radius:var(--rounded-md);background:var(--color-tertiary);display:flex;align-items:center;justify-content:center;font-size:2rem">🏭</div>
+      <div>
+        <h2 style="margin-bottom:var(--space-sm)">Warehousing & Distribution</h2>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">150+ warehouses globally with integrated WMS</p>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">Cross-docking, pick-and-pack, inventory management, kitting, and value-added services. Real-time inventory sync with your ERP. Climate-controlled, FDA-registered, and bonded warehouse options available.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-lg)"><span class="tag">Cross-Docking</span><span class="tag">Pick & Pack</span><span class="tag">Inventory Management</span><span class="tag">Kitting & Assembly</span><span class="tag">Climate-Controlled</span><span class="tag">Bonded Storage</span></div>
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:var(--color-neutral)" id="customs-brokerage">
+  <div class="container reveal">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-xl);align-items:start">
+      <div style="width:72px;height:72px;border-radius:var(--rounded-md);background:var(--color-tertiary);display:flex;align-items:center;justify-content:center;font-size:2rem">📋</div>
+      <div>
+        <h2 style="margin-bottom:var(--space-sm)">Customs Brokerage</h2>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">Licensed brokers in 80+ countries</p>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">Classification, documentation, and compliance management. Zero-touch customs clearance for repeat shipments. Duty drawback, free trade agreement optimization, and tariff engineering to reduce your landed costs.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-lg)"><span class="tag">HS Classification</span><span class="tag">Duty Optimization</span><span class="tag">FTA Management</span><span class="tag">Compliance Audits</span><span class="tag">Denied Party Screening</span><span class="tag">Post-Entry Services</span></div>
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:var(--color-surface)" id="supply-chain-analytics">
+  <div class="container reveal">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-xl);align-items:start">
+      <div style="width:72px;height:72px;border-radius:var(--rounded-md);background:var(--color-tertiary);display:flex;align-items:center;justify-content:center;font-size:2rem">📊</div>
+      <div>
+        <h2 style="margin-bottom:var(--space-sm)">Supply Chain Analytics</h2>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">Data-driven insights for smarter logistics</p>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">Real-time dashboards, predictive ETAs, cost optimization, and carbon-footprint tracking. API-first platform integrates with your existing tools. Custom reports, alerts, and KPI tracking for your entire supply chain.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-lg)"><span class="tag">Real-Time Dashboards</span><span class="tag">Predictive Analytics</span><span class="tag">Cost Optimization</span><span class="tag">Carbon Tracking</span><span class="tag">API Integration</span><span class="tag">Custom Reporting</span></div>
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:var(--color-neutral)" id="cold-chain-logistics">
+  <div class="container reveal">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-xl);align-items:start">
+      <div style="width:72px;height:72px;border-radius:var(--rounded-md);background:var(--color-tertiary);display:flex;align-items:center;justify-content:center;font-size:2rem">❄️</div>
+      <div>
+        <h2 style="margin-bottom:var(--space-sm)">Cold Chain Logistics</h2>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">Temperature-controlled shipping for sensitive cargo</p>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">Pharmaceuticals, biologics, and perishables — monitored in real time with IoT sensors. Instant alerts on any temperature deviation. GDP-compliant, with validated packaging and 24/7 intervention teams.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-lg)"><span class="tag">Pharma Logistics</span><span class="tag">Biologics Transport</span><span class="tag">Food-Grade Cold Chain</span><span class="tag">IoT Monitoring</span><span class="tag">GDP Compliant</span><span class="tag">Validated Packaging</span></div>
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:var(--color-surface)" id="e-commerce-fulfillment">
+  <div class="container reveal">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-xl);align-items:start">
+      <div style="width:72px;height:72px;border-radius:var(--rounded-md);background:var(--color-tertiary);display:flex;align-items:center;justify-content:center;font-size:2rem">📦</div>
+      <div>
+        <h2 style="margin-bottom:var(--space-sm)">E-Commerce Fulfillment</h2>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">End-to-end D2C and B2B fulfillment</p>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">Multi-channel inventory sync, automated pick-pack-ship, returns management, and branded unboxing experiences. 98.6% SLA adherence. Integrates with Shopify, Amazon, WooCommerce, and custom platforms.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-lg)"><span class="tag">D2C Fulfillment</span><span class="tag">B2B Distribution</span><span class="tag">Returns Management</span><span class="tag">Branded Packaging</span><span class="tag">Multi-Channel Sync</span><span class="tag">Subscription Boxes</span></div>
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:var(--color-neutral)" id="project-cargo--heavy-haul">
+  <div class="container reveal">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-xl);align-items:start">
+      <div style="width:72px;height:72px;border-radius:var(--rounded-md);background:var(--color-tertiary);display:flex;align-items:center;justify-content:center;font-size:2rem">🏗️</div>
+      <div>
+        <h2 style="margin-bottom:var(--space-sm)">Project Cargo & Heavy Haul</h2>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">Oversized and complex project shipments</p>
+        <p class="body-lg" style="color:var(--color-secondary);margin-bottom:var(--space-md)">Route surveys, permit management, specialized equipment, and dedicated project managers. Industrial machinery, energy-sector equipment, and infrastructure components — moved safely and on schedule.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-lg)"><span class="tag">Route Surveys</span><span class="tag">Permit Management</span><span class="tag">Heavy Lift</span><span class="tag">Industrial Projects</span><span class="tag">Energy Sector</span><span class="tag">Dedicated PM</span></div>
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:var(--color-primary);text-align:center">
+  <div class="container reveal"><h2 style="color:var(--color-on-primary);margin-bottom:var(--space-sm)">Not sure what you need?</h2><p class="body-lg" style="color:rgba(255,255,255,.6);max-width:500px;margin:0 auto var(--space-lg)">Our logistics engineers will design a solution for your specific supply chain.</p><a href="contact.html" class="btn btn-primary" style="background:var(--color-surface);color:var(--color-primary);border-color:var(--color-surface)">Talk to an Expert</a></div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo">MOVV<span class="logo-e"><span></span><span></span><span></span></span></div><p class="body-sm">Precision logistics for the world's most demanding supply chains. The Power Of Precision.</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Air Freight</a></li><li><a href="services.html">Ocean Freight</a></li><li><a href="services.html">Ground Transport</a></li><li><a href="services.html">Warehousing</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Support</h4><ul><li><a href="tracking.html">Track Shipment</a></li><li><a href="contact.html">Help Center</a></li><li><a href="contact.html">Rate Quote</a></li><li><a href="contact.html">Report Issue</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p class="body-sm">© 2026 MOVVE Logistics. All rights reserved.</p></div>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('.btn').forEach(btn=>{btn.addEventListener('click',function(e){const r=this.getBoundingClientRect();this.style.setProperty('--rx',`${e.clientX-r.left}px`);this.style.setProperty('--ry',`${e.clientY-r.top}px`)})});
+const revealObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+const currentPage=location.pathname.split('/').pop()||'index.html';
+document.querySelectorAll('.nav-links a').forEach(a=>{if(a.getAttribute('href')===currentPage)a.classList.add('active')});
+</script>
+</body>
+</html>
