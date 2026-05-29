@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Real-time shipment tracking across air, ocean, and ground. Enter your MOVVE tracking number for instant status updates.">
+<meta property="og:title" content="Track Shipment — MOVVE">
+<meta property="og:description" content="Real-time shipment tracking across air, ocean, and ground. Enter your MOVVE tracking number for instant status updates.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zexc66.github.io/movve-website/tracking.html">
+<meta property="og:site_name" content="MOVVE Logistics">
+<link rel="canonical" href="https://zexc66.github.io/movve-website/tracking.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,7 +25,7 @@
   --color-neutral: #F7F8FA;
   --color-on-primary: #FFFFFF;
   --color-on-tertiary: #FFFFFF;
-  --color-surface: #FFFFFF;
+  --color-surface: #FAFBFC;
   --color-border: #E2E6ED;
   --color-muted: #8E99A9;
   --font: 'Inter', sans-serif;
@@ -368,9 +375,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .toast-container{left:16px;right:16px;bottom:16px}
   .toast{max-width:100%}
 }
+
+.skip-link{position:absolute;top:-100px;left:16px;background:var(--color-tertiary);color:#fff;padding:12px 20px;border-radius:4px;z-index:10000;font-weight:600;font-size:.875rem;transition:top .2s}
+.skip-link:focus{top:16px}
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">MOVV<span class="logo-e"><span></span><span></span><span></span></span></a>
